@@ -93,7 +93,7 @@ public class BinaryToHex {
     public static void hard()
     { Random rand = new Random();
         Scanner scan = new Scanner(System.in);
-        int num = rand.nextInt(16777215) + 1;
+        int num = rand.nextInt(16777215) + 65535;
         String hexNum = Integer.toHexString(num);
         System.out.println("What is " + Integer.toBinaryString(num) + " equal to?");
         String answer = scan.next();
