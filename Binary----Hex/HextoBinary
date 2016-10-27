@@ -1,0 +1,129 @@
+
+import java.util.Scanner;
+import java.util.Random;
+public class HexToBinary {
+    public static void main(String[] args) {
+       hexToBinary();
+    }
+    public static void hexToBinary()
+    {
+      Scanner scan = new Scanner(System.in);
+      System.out.println("(E)asy, (M)edium, or (H)ard");
+      String difficulty = scan.nextLine();
+      if(difficulty.equalsIgnoreCase("E"))
+      {
+          easy();
+      }
+      else if(difficulty.equalsIgnoreCase("M"))
+      {
+          medium();
+      }
+      else if(difficulty.equalsIgnoreCase("H"))
+      {
+          hard();
+      }
+      else
+      {
+          System.out.println("Invalid Choice");
+      }
+    }
+    public static void easy()
+    {
+        Random rand = new Random();
+        Scanner scan = new Scanner(System.in);
+        int num = rand.nextInt(255) + 1;
+        String binaryNum = Integer.toBinaryString(num);
+        System.out.println("What is " + Integer.toHexString(num) + " equal to?");
+        String answer = scan.next();
+        
+        if(answer.equalsIgnoreCase(binaryNum))
+        {
+            System.out.println("Correct!");
+        }
+        else
+        {
+            System.out.println("Incorrect!");
+        }
+        System.out.println("Go again? (Y)es or (N)o.");
+        String choice = scan.next();
+        if(choice.equalsIgnoreCase("Y"))
+        {
+        	hexToBinary();
+        }
+        else if(choice.equalsIgnoreCase("N"))
+        {
+            System.out.println("Good work today!");
+        }
+        else
+        {
+            System.out.println("Invalid Choice");
+        }
+    }
+    public static void medium()
+    {
+    	 Random rand = new Random();
+         Scanner scan = new Scanner(System.in);
+         int num = rand.nextInt(65535) + 255;
+         String binaryNum = Integer.toBinaryString(num);
+         System.out.println("What is " + Integer.toHexString(num) + " equal to?");
+         System.out.println(binaryNum);
+         String answer = scan.next();
+         
+         if(answer.equalsIgnoreCase(binaryNum))
+         {
+             System.out.println("Correct!");
+         }
+         else
+         {
+             System.out.println("Incorrect!");
+         }
+         System.out.println("Go again? (Y)es or (N)o.");
+         String choice = scan.next();
+         if(choice.equalsIgnoreCase("Y"))
+         {
+         	hexToBinary();
+         }
+         else if(choice.equalsIgnoreCase("N"))
+         {
+             System.out.println("Good work today!");
+         }
+         else
+         {
+             System.out.println("Invalid Choice");
+         }
+    }
+    public static void hard()
+    {  Random rand = new Random();
+    Scanner scan = new Scanner(System.in);
+    int num = rand.nextInt(16777215) + 65535;
+    String binaryNum = Integer.toBinaryString(num);
+    System.out.println("What is " + Integer.toHexString(num) + " equal to?");
+    String answer = scan.next();
+    
+    if(answer.equalsIgnoreCase(binaryNum))
+    {
+        System.out.println("Correct!");
+    }
+    else
+    {
+        System.out.println("Incorrect!");
+    }
+    System.out.println("Go again? (Y)es or (N)o.");
+    String choice = scan.next();
+    if(choice.equalsIgnoreCase("Y"))
+    {
+    	hexToBinary();
+    }
+    else if(choice.equalsIgnoreCase("N"))
+    {
+        System.out.println("Good work today!");
+    }
+    else
+    {
+        System.out.println("Invalid Choice");
+    }
+    }
+    
+    
+
+}
